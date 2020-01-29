@@ -1,3 +1,7 @@
+Resources
+1. Planning Form: https://docs.google.com/document/d/1CWw3DvfusUHGUSdGlWHF1B6ybMCntxARdgXiJtYI0m8/edit?ts=5de69bbd#
+2. Resources: https://docs.google.com/document/d/1CWw3DvfusUHGUSdGlWHF1B6ybMCntxARdgXiJtYI0m8/edit?ts=5de69bbd#
+=========================================================================================
 Dealership
 has_many :cars
 :name - string, :location - string, :phone - string
@@ -13,4 +17,4 @@ Routes
    look like this: fetch('http://localhost:3000/api/v1/cars')
 
 Controllers
-  -we will need to namespace these as well
+  -we will need to namespace these as well (ex: Api::V1:CarsController)
