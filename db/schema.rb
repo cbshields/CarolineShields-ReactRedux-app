@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2020_01_29_175618) do
     t.string "make"
     t.string "model"
     t.integer "year"
-    t.decimal "price"
+    t.string "color"
+    t.integer "price"
     t.boolean "available", default: true, null: false
     t.integer "dealership_id"
     t.datetime "created_at", null: false
