@@ -6,3 +6,11 @@ has_many :cars
 Car
 belongs_to :Dealership
 :make - string, :model - string, :year - integer, :price - decimal, :available boolean
+
+
+Routes
+  -since we moved our controllers to a "version" folder (v1), we need to setup namespaces, then our fetch urls will
+   look like this: fetch('http://localhost:3000/api/v1/cars')
+
+Controllers
+  -we will need to namespace these as well
