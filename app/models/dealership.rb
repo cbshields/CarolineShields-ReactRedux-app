@@ -3,7 +3,12 @@ class Dealership < ApplicationRecord
   validates :name, presence: true
 
   def update_inventory(car)
-    
+    if car.available == $true
+      self.inventory = self.inventory + 1
+    else
+      self.inventory = self.inventory - 1
+    end
+    self.save
   end
 
 
