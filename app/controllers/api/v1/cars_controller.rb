@@ -1,30 +1,33 @@
 class Api::V1::CarsController < ApplicationController
-  defore_action: get_dealership
+  before_action :get_dealership
 
   def index
     render json: @dealership.cars
   end
 
-  def create
-    @car = Car.new(car_params)
-    if @car.save
-      render json: @account
-    else
-      render json: {error: 'Error entering car information'}
+  def show
+    # @car = Car.find(params[:id])
+    @car = @dealership.cars.find_by(id: params[:id])
+    render json: @car
   end
 
-  def show
-    @car = Car.find(params[:id])
-    render json: @car
+  def create
+    @car = @dealership.cars.new(car_params)
+    if @dealership.update_inventory(@car)
+      @car.save
+      render json: @car
+    else
+      render json: {error: 'Error entering car information'}
+    end
   end
 
   def destroy
     @car = Car.find(params[:id])
-    @car.delete
-    # update car inventory
-    # @dealership = Dealership.find(@dealer_id)
-    # @dealership = @dealership.inventory - 1
-    # @dealership.save
+    if @dealership.remove_inventory(@car)
+        @car.delete
+    end
+
+
   end
 
   private

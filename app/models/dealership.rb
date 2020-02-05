@@ -11,5 +11,8 @@ class Dealership < ApplicationRecord
     self.save
   end
 
-
+  def remove_inventory(car)
+    self.inventory = self.inventory - 1
+    self.save
+  end
 end
