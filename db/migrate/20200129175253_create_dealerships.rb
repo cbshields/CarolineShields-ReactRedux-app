@@ -7,6 +7,7 @@ class CreateDealerships < ActiveRecord::Migration[5.2]
       t.string :state
       t.integer :zip
       t.string :phone
+      t.integer :inventory
 
       t.timestamps
     end
