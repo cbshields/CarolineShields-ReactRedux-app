@@ -1,8 +1,8 @@
 class Api::V1::CarsController < ApplicationController
+  defore_action: get_dealership
 
   def index
-    @cars = Car.all
-    render json: @cars
+    render json: @dealership.cars
   end
 
   def create
@@ -20,8 +20,7 @@ class Api::V1::CarsController < ApplicationController
 
   def destroy
     @car = Car.find(params[:id])
-    @dealer_id = @car.dealership_id
-    # @car.delete
+    @car.delete
     # update car inventory
     # @dealership = Dealership.find(@dealer_id)
     # @dealership = @dealership.inventory - 1
@@ -41,4 +40,8 @@ class Api::V1::CarsController < ApplicationController
     )
   end
 
+  def get_dealership
+    @dealership = Dealership.find(params[:dealership_id])
+
+  end
 end
