@@ -1,6 +1,6 @@
 class Dealership < ApplicationRecord
   has_many :cars
-  validates :name, :inventory presence: true
+  validates :name, :inventory, presence: true
 
   def update_inventory(car)
     if car.available == $true

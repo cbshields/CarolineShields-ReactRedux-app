@@ -25,9 +25,8 @@ class Api::V1::CarsController < ApplicationController
     @car = Car.find(params[:id])
     if @dealership.remove_inventory
         @car.delete
+        render json: @dealership.cars
     end
-
-
   end
 
   private
@@ -45,6 +44,6 @@ class Api::V1::CarsController < ApplicationController
 
   def get_dealership
     @dealership = Dealership.find(params[:dealership_id])
-
   end
+  
 end

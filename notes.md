@@ -1,6 +1,8 @@
 Resources
 1. Planning Form: https://docs.google.com/document/d/1CWw3DvfusUHGUSdGlWHF1B6ybMCntxARdgXiJtYI0m8/edit?ts=5de69bbd#
 2. Resources: https://docs.google.com/document/d/1CWw3DvfusUHGUSdGlWHF1B6ybMCntxARdgXiJtYI0m8/edit?ts=5de69bbd#
+
+Command to start rails/npm: rake start
 =========================================================================================
 Dealership
 has_many :cars
