@@ -13,6 +13,8 @@ gem 'puma', '~> 3.11'
 
 gem 'foreman', '~> 0.82.0'
 
+gem 'pry'
+
 gem 'rack-cors'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
