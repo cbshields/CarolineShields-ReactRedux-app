@@ -2,6 +2,7 @@ class Api::V1::DealershipsController < ApplicationController
 
 
     def index
+      binding.pry
       @dealerships = Dealership.all
       render json: @dealerships
     end
@@ -13,7 +14,7 @@ class Api::V1::DealershipsController < ApplicationController
       else
         render json: {error: 'Error entering dealership information'}
       end
-    end  
+    end
 
     def show
       @dealership = Dealership.find(params[:id])
