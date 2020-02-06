@@ -2,7 +2,6 @@ class Api::V1::DealershipsController < ApplicationController
 
 
     def index
-      binding.pry
       @dealerships = Dealership.all
       render json: @dealerships
     end
