@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { fetchDepartments } from './actions/fetchDepartments'
+import DealershipsContainer from './containers/DealershipsContainer'
 
 class App extends React.Component {
 
@@ -12,17 +12,17 @@ class App extends React.Component {
  //  }
 
  componentDidMount(){
-   this.props.fetchDepartments({type: 'FETCH_DEPARTMENTS', payload: {name: 'Yo Mamas Cars'}})
+
  }
 
 
   render() {
     return (
       <div className="App">
-        App
+        <DealershipsContainer />
       </div>
     )
   }
 }
 
-export default connect(null,{fetchDepartments})(App);
+export default connect()(App);
