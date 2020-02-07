@@ -19,10 +19,19 @@ class DealershipInput extends React.Component {
     })
   }
 
-//Why don't I need to clear state manually, it's doing it automatically
+  //Why can't you use setState([event.target.name]: '')
   handleOnSubmit = (event) => {
     event.preventDefault()
     this.props.addDealership(this.state)
+    this.setState({
+      name: '',
+      address: '',
+      city: '',
+      state: '',
+      zip: '',
+      phone: '',
+      inventory: ''
+    })
   }
 
   render() {
@@ -85,7 +94,7 @@ class DealershipInput extends React.Component {
             placeholder="How many cars you got"
             onChange={this.handleOnChange}/><br></br><br></br>
 
-          <input type="submit"/>
+          <input type="submit"/><br></br><br></br>
         </form>
       </div>
     )
