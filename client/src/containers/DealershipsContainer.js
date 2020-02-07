@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import { fetchDealerships } from '../actions/fetchDealerships'
 import DealershipInput from '../components/DealershipInput'
 import Dealerships from '../components/Dealerships'
@@ -16,9 +16,11 @@ class DealershipsContainer extends React.Component {
   render(){
     return(
       <div>
-        <Route path='/dealerships/new' component={DealershipInput} />
-        <Route path='/dealerships/:id' render={(routerProps) => <Dealership {...routerProps} dealerships={this.props.dealerships}/>} />
-        <Route exact path='/dealerships' render={(routerProps) => <Dealerships {...routerProps} dealerships={this.props.dealerships}/>} />
+        <Switch>
+          <Route path='/dealerships/new' component={DealershipInput} />
+          <Route path='/dealerships/:id' render={(routerProps) => <Dealership {...routerProps} dealerships={this.props.dealerships}/>} />
+          <Route exact path='/dealerships' render={(routerProps) => <Dealerships {...routerProps} dealerships={this.props.dealerships}/>} />
+        </Switch>
       </div>
     )
   }

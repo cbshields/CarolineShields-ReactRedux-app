@@ -1,12 +1,13 @@
 import React from 'react'
-import Dealership from './Dealership'
+import {Link} from 'react-router-dom'
+// import Dealership from './Dealership'
 
 const Dealerships = (props) => {
 
   return (
     <div>
       {props.dealerships.map(dealership =>
-        <div key={dealership.id}><Dealership dealership={dealership} /></div>)}
+        <li key={dealership.id}><Link to={`/dealerships/${dealership.id}`}>{dealership.name}</Link></li>)}
     </div>
   )
 
