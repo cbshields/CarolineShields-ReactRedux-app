@@ -14,7 +14,7 @@ class DealershipsContainer extends React.Component {
   render(){
     return(
       <div>
-        <DealershipInput />
+        <DealershipInput /><br></br>
         <Dealerships dealerships={this.props.dealerships}/>
       </div>
     )
