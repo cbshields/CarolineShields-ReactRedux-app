@@ -7,7 +7,7 @@ class Api::V1::DealershipsController < ApplicationController
     end
 
     def create
-      
+
       @dealership = Dealership.new(dealership_params)
       if @dealership.save
         render json: @dealership
@@ -24,7 +24,7 @@ class Api::V1::DealershipsController < ApplicationController
     def destroy
       @dealership = Dealership.find(params[:id])
       @dealership.delete
-      # Should all cars get deleted?
+
     end
 
     private
