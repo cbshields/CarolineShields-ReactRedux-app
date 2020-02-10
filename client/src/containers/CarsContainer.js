@@ -9,7 +9,7 @@ class CarsContainer extends React.Component {
     return (
 
       <div>
-        <CarInput />
+        <CarInput dealership = {this.props.dealership}/>
         <Cars cars={this.props.dealership && this.props.dealership.cars}/>
       </div>
 

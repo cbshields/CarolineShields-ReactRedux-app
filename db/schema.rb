@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_01_29_175618) do
     t.integer "year"
     t.string "color"
     t.integer "price"
-    t.boolean "available", default: true, null: false
     t.integer "dealership_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -13,9 +13,9 @@ class Api::V1::CarsController < ApplicationController
 
   def create
     @car = @dealership.cars.new(car_params)
-    if @dealership.update_inventory(@car)
+    if @dealership.add_inventory
       @car.save
-      render json: @car
+      render json: @dealership
     else
       render json: {error: 'Error entering car information'}
     end
@@ -37,7 +37,6 @@ class Api::V1::CarsController < ApplicationController
       :year,
       :color,
       :price,
-      :available,
       :dealership_id
     )
   end
@@ -45,5 +44,5 @@ class Api::V1::CarsController < ApplicationController
   def get_dealership
     @dealership = Dealership.find(params[:dealership_id])
   end
-  
+
 end
