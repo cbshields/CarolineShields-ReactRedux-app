@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_01_29_175618) do
     t.integer "zip"
     t.string "phone"
     t.integer "inventory"
+    t.boolean "editing", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

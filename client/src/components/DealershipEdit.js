@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addDealership } from '../actions/addDealership'
+import { updateDealership } from '../actions/updateDealership'
 
-class DealershipInput extends React.Component {
+class DealershipEdit extends React.Component {
   state = {
     name: '',
     address: '',
@@ -11,7 +11,6 @@ class DealershipInput extends React.Component {
     zip: '',
     phone: '',
     inventory: '',
-    editing: false
   }
 
   handleOnChange = (event) => {
@@ -23,7 +22,8 @@ class DealershipInput extends React.Component {
   //Why can't you use setState([event.target.name]: '')
   handleOnSubmit = (event) => {
     event.preventDefault()
-    this.props.addDealership(this.state)
+    let dealership = {...this.state, id: this.props.dealership.id}
+    this.props.updateDealership(dealership)
     this.setState({
       name: '',
       address: '',
@@ -102,4 +102,4 @@ class DealershipInput extends React.Component {
   }
 }
 
-export default connect(null, {addDealership})(DealershipInput)
+export default connect(null, {updateDealership})(DealershipEdit)

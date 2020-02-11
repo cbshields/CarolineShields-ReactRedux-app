@@ -21,6 +21,10 @@ class Api::V1::DealershipsController < ApplicationController
       render json: @dealership
     end
 
+    def update
+      binding.pry
+    end
+
     def destroy
       @dealership = Dealership.find(params[:id])
       @dealership.delete
@@ -36,7 +40,8 @@ class Api::V1::DealershipsController < ApplicationController
         :state,
         :zip,
         :phone,
-        :inventory
+        :inventory,
+        :editing
       )
     end
 end

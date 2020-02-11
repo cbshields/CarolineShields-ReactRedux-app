@@ -8,7 +8,7 @@ class CreateDealerships < ActiveRecord::Migration[5.2]
       t.integer :zip
       t.string :phone
       t.integer :inventory
-
+      t.boolean :editing, default: false, null: false
       t.timestamps
     end
   end
