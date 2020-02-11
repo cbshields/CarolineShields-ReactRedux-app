@@ -22,7 +22,7 @@ class Api::V1::CarsController < ApplicationController
   end
 
   def destroy
-    binding.pry
+
     @car = Car.find(params[:id])
     @dealership = Dealership.find(@car.dealership_id)
     if @dealership.remove_inventory
