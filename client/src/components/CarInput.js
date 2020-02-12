@@ -30,10 +30,12 @@ class CarInput extends React.Component {
   }
 
   render() {
-
+    const divStyle = {
+      marginTop: '30px'
+    }
     return (
 
-      <div>
+        <div style={divStyle}>
         <form onSubmit={this.handleOnSubmit}>
           <label> Make: </label>
           <input

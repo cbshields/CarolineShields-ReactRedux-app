@@ -1,5 +1,4 @@
 export const addDealership = (data) => {
-
    return (dispatch) => {
      fetch('http://localhost:3001/api/v1/dealerships', {
        headers: {

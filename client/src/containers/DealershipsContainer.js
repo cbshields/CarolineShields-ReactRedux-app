@@ -17,7 +17,7 @@ class DealershipsContainer extends React.Component {
     return(
       <div>
         <Switch>
-          <Route path='/dealerships/new' component={DealershipInput} />
+          <Route exact path='/dealerships/new' component={DealershipInput} />
           <Route path='/dealerships/:id' render={(routerProps) => <Dealership {...routerProps} dealerships={this.props.dealerships}/>} />
           <Route exact path='/dealerships' render={(routerProps) => <Dealerships {...routerProps} dealerships={this.props.dealerships}/>} />
         </Switch>

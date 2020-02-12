@@ -6,11 +6,13 @@ import DealershipEdit from './DealershipEdit'
 
 const Dealership = (props) => {
 
-  console.log(props)
+  const divStyle = {
+    marginTop: '30px'
+  }
   let dealership = props.dealerships.filter(dealership => dealership.id == props.match.params.id)[0]
-
+  debugger
   return (
-    <div>
+    <div style={divStyle}>
       <h2>
         {dealership ? dealership.name : null} - {dealership ? dealership.city : null} {dealership ? dealership.state : null} <button onClick={()=> props.dispatch({type:'EDIT_DEALERSHIP',id:dealership.id})}>EDIT</button>
       </h2>

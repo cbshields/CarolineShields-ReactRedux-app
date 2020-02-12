@@ -6,23 +6,34 @@ class Api::V1::DealershipsController < ApplicationController
       render json: @dealerships
     end
 
-    def create
-
-      @dealership = Dealership.new(dealership_params)
-      if @dealership.save
-        render json: @dealership
-      else
-        render json: {error: 'Error entering dealership information'}
-      end
-    end
-
     def show
       @dealership = Dealership.find(params[:id])
       render json: @dealership
     end
 
+    def create
+      @dealership = Dealership.new(dealership_params)
+      if @dealership.save
+          binding.pry
+         render json: @dealership
+      else
+        render json: {error: 'Error entering dealership information'}
+      end
+    end
+
     def update
-      binding.pry
+
+      @dealership = Dealership.find(params[:id])
+      @dealership.update(name: params["dealership"]["name"])
+      @dealership.save
+      render json: @dealership
+      # @dealership.update
+      # params.each do |key, value|
+      #     if value != ""
+      #       binding.pry
+      #       @dealership.update(name: params["dealership"]["name"])
+      #     end
+      #   end
     end
 
     def destroy
