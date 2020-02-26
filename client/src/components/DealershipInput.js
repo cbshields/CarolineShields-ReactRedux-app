@@ -23,6 +23,7 @@ class DealershipInput extends React.Component {
   //Why can't you use setState([event.target.name]: '')
   handleOnSubmit = (event) => {
     event.preventDefault()
+    debugger
     this.props.addDealership(this.state)
     this.setState({
       name: '',
@@ -33,6 +34,7 @@ class DealershipInput extends React.Component {
       phone: '',
       inventory: '',
     })
+   this.props.history.push('/dealerships')
   }
 
 

@@ -14,7 +14,6 @@ class Api::V1::DealershipsController < ApplicationController
     def create
       @dealership = Dealership.new(dealership_params)
       if @dealership.save
-          binding.pry
          render json: @dealership
       else
         render json: {error: 'Error entering dealership information'}
