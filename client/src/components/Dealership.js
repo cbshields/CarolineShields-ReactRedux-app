@@ -10,13 +10,12 @@ const Dealership = (props) => {
     marginTop: '30px'
   }
   let dealership = props.dealerships.filter(dealership => dealership.id == props.match.params.id)[0]
-  debugger
   return (
     <div style={divStyle}>
       <h2>
-        {dealership ? dealership.name : null} - {dealership ? dealership.city : null} {dealership ? dealership.state : null} <button onClick={()=> props.dispatch({type:'EDIT_DEALERSHIP',id:dealership.id})}>EDIT</button>
+        {dealership ? dealership.name : null} - {dealership ? dealership.city : null} {dealership ? dealership.state : null} {dealership && !dealership.editing ? <button onClick={()=> props.dispatch({type:'EDIT_DEALERSHIP',id:dealership.id})}>EDIT</button> : null}
       </h2>
-      <h3>Inventory: {dealership ? dealership.inventory : null}</h3>
+       {dealership ? <h3>Inventory: {dealership.inventory} </h3>: null}
 
       {dealership && dealership.editing ? <DealershipEdit dealership={dealership} key={dealership.id} /> : <CarsContainer dealership={dealership}/> }
 

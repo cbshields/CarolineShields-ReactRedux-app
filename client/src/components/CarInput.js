@@ -37,6 +37,7 @@ class CarInput extends React.Component {
 
         <div style={divStyle}>
         <form onSubmit={this.handleOnSubmit}>
+          <h2> New Car </h2>
           <label> Make: </label>
           <input
             type="text"

@@ -23,16 +23,18 @@ class Api::V1::DealershipsController < ApplicationController
     def update
 
       @dealership = Dealership.find(params[:id])
-      @dealership.update(name: params["dealership"]["name"])
+      # @dealership.update(name: params["dealership"]["name"])
+      dealershipfields = {}
+      params.each do |key, value|
+          if value != "" && key != "controller" && key != "action" && key != "dealership"
+            dealershipfields[key] = value
+          end
+        end
+      @dealership.update(dealershipfields)
       @dealership.save
       render json: @dealership
-      # @dealership.update
-      # params.each do |key, value|
-      #     if value != ""
-      #       binding.pry
-      #       @dealership.update(name: params["dealership"]["name"])
-      #     end
-      #   end
+
+
     end
 
     def destroy
