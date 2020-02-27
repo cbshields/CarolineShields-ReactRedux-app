@@ -4,14 +4,24 @@ import { updateDealership } from '../actions/updateDealership'
 
 class DealershipEdit extends React.Component {
   state = {
-    name: '',
-    address: '',
-    city: '',
-    state: '',
-    zip: '',
-    phone: '',
-    inventory: '',
+    name: `${this.props.dealership.name}`,
+    address: `${this.props.dealership.address}`,
+    city: `${this.props.dealership.city}`,
+    state: `${this.props.dealership.state}`,
+    zip: `${this.props.dealership.zip}`,
+    phone: `${this.props.dealership.phone}`,
+    inventory: `${this.props.dealership.inventory}`,
   }
+
+  //   state = ({
+  //   name: '',
+  //   address: '',
+  //   city: '',
+  //   state: '',
+  //   zip: '',
+  //   phone: '',
+  //   inventory: '',
+  // })
 
   handleOnChange = (event) => {
     this.setState({
@@ -36,6 +46,7 @@ class DealershipEdit extends React.Component {
   }
 
   render() {
+
     return (
       <div>
         <form onSubmit={this.handleOnSubmit}>
