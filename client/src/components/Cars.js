@@ -15,7 +15,7 @@ const Cars = (props) => {
     <div>
     <h2> Available Cars </h2>
       {props.cars && props.cars.map(car =>
-        <li key={car.id}>{car.make} {car.model} {car.year} {car.color} - ${car.price} <button onClick={() => handleDelete(car)}>BUY IT!</button></li>
+        <li key={car.id}>{car.make} {car.model} {car.year} {car.color} - ${car.price} <button onClick={() => handleDelete(car)}>SOLD</button></li>
       )}
     </div>
 

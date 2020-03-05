@@ -26,6 +26,16 @@ export default function dealershipReducer(state = {dealerships: []}, action) {
           }
         })
         return {...state, dealerships: dealerships4}
+    case 'DELETE_DEALERSHIP':
+          debugger
+          let dealerships5 = state.dealerships.map(dealership => {
+            if (dealership.id === action.payload.id) {
+              return action.payload
+            } else {
+              return dealership
+            }
+          })
+          return {...state, dealerships: dealerships5}
     case 'ADD_CAR':
       let dealerships = state.dealerships.map(dealership => {
         if (dealership.id === action.payload.id) {
