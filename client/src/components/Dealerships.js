@@ -14,7 +14,6 @@ const Dealerships = (props) => {
   }
 
   const handleDelete = (dealership) => {
-    debugger
     props.deleteDealership(dealership.id)
   }
 

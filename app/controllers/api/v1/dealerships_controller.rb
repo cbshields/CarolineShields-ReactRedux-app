@@ -39,7 +39,6 @@ class Api::V1::DealershipsController < ApplicationController
     end
 
     def destroy
-      binding.pry
       @dealership = Dealership.find(params[:id])
       @dealership.delete
 
