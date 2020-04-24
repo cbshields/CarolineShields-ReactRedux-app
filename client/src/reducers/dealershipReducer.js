@@ -27,10 +27,8 @@ export default function dealershipReducer(state = {dealerships: []}, action) {
         })
         return {...state, dealerships: dealerships4}
     case 'DELETE_DEALERSHIP':
-        let dealerships5 = state.dealerships.map(dealership => {
-          if (dealership.id === action.payload.id) {
-            return action.payload
-          } else {
+        let dealerships5 = state.dealerships.filter(dealership => {
+          if (dealership.id != action.payload) {
             return dealership
           }
         })

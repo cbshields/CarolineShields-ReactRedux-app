@@ -21,7 +21,7 @@ const Dealerships = (props) => {
     <div style={divStyle}>
       <Link to='/dealerships/new'>Create New Dealership</Link><br></br><br></br>
       {props.dealerships.map(dealership =>
-         <li style={liStyle} key={dealership.id}><Link to={`/dealerships/${dealership.id}`}>{dealership.name}</Link>    <button onClick={() => handleDelete(dealership)}>DELETE</button></li>)}
+      <li style={liStyle} key={dealership.id}><Link to={`/dealerships/${dealership.id}`}>{dealership.name}</Link> {dealership ? <button onClick={() => handleDelete(dealership)}>DELETE</button> : null}  </li> )}
     </div>
   )
 
