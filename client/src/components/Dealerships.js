@@ -1,8 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
+import Counter from './Counter'
 import { deleteDealership } from '../actions/deleteDealership'
 // import Dealership from './Dealership'
+
 
 const Dealerships = (props) => {
   const divStyle = {
@@ -21,7 +23,11 @@ const Dealerships = (props) => {
     <div style={divStyle}>
       <Link to='/dealerships/new'>Create New Dealership</Link><br></br><br></br>
       {props.dealerships.map(dealership =>
-      <li style={liStyle} key={dealership.id}><Link to={`/dealerships/${dealership.id}`}>{dealership.name}</Link> {dealership ? <button onClick={() => handleDelete(dealership)}>DELETE</button> : null}  </li> )}
+        <li style={liStyle} key={dealership.id}>
+          <Link to={`/dealerships/${dealership.id}`}>{dealership.name}</Link>
+          {dealership ? <button onClick={() => handleDelete(dealership)}>DELETE</button> : null}
+          <Counter />
+        </li> )}
     </div>
   )
 
